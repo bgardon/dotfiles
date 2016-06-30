@@ -21,3 +21,4 @@ fresh freshshell/fresh contrib/completion/fresh-completion.bash
 
 fresh profile --file
 fresh bashrc --file
+fresh zshrc --file
