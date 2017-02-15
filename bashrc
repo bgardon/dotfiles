@@ -1,39 +1,18 @@
-# General configuration starts
+#
+# ~/.bashrc
+#
 
-export EDITOR=`which vim`
-export VISUAL=$EDITOR
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
 
-PATH=$HOME/bin:$PATH
-source ~/.fresh/build/shell.sh
+alias ls='ls --color=auto'
+export PS1="\[\033[38;5;246m\]\u\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput bold)\]\[$(tput sgr0)\]\[\033[38;5;129m\]\w:\[$(tput sgr0)\]"
+# >>>>BEGIN ADDED BY CNCHI INSTALLER<<<< #
+BROWSER=/usr/bin/chromium
+EDITOR=/usr/bin/nano
+# >>>>>END ADDED BY CNCHI INSTALLER<<<<< #
 
-export PS1="\[\033[38;5;128m\][\u]\[$(tput bold)\]\[$(tput sgr0)\]\[\033[38;5;51m\]\w:\[$(tput sgr0)\]\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]"
-
-export PATH=~/.homebrew/homebrew/bin:~/.homebrew/homebrew/sbin:$PATH
-
-export CLICOLOR=1;
-#export LS_COLORS=exfxcxdxbxegedabagacad;
-
-alias kget="kubectl get"
-alias kcreate="kubectl create -f *.yaml"
-alias kdelete="kubectl delete"
-alias klogs="kubectl logs"
-
-# General configuration ends
-
-if [[ -n $PS1 ]]; then
-    : # Executed only for interactive shells
-
-    # Per the direnv installation instructions, this line must occur at the end of
-    # .bashrc
-    eval "$(direnv hook $0)"
-else
-    : # Executed only for non-interactive shells
-fi
-
-if shopt -q login_shell ; then
-    : # Executed only for login shells
-else
-    : # Executed only for non-login shells
-fi
-
-
+alias attu="ssh bgardon@attu2.cs.washington.edu"
+alias attu_scp="scp bgardon@attu2.cs.washington.edu:/homes/iws/bgardon/$1 $2"
+alias subl="subl3"
+alias l="ls"

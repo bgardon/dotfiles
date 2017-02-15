@@ -1,0 +1,13 @@
+#!/bin/bash
+
+COPY_TO () {
+    cp ~/dotfiles/$1 $2.$1
+}
+
+home_dotfiles=(bashrc gitconfig vimrc)
+
+for i in ${home_dotfiles[@]}; do
+        COPY_TO $i ~/
+done
+exit 0
+
