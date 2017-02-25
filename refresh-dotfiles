@@ -9,5 +9,8 @@ home_dotfiles=(bashrc gitconfig vimrc)
 for i in ${home_dotfiles[@]}; do
         COPY_TO $i ~/
 done
+
+source ~/.bashrc
+
 exit 0
 
